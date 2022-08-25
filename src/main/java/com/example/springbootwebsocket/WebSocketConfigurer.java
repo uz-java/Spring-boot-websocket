@@ -20,6 +20,7 @@ public class WebSocketConfigurer implements WebSocketMessageBrokerConfigurer {
        registry.addEndpoint("/chat").withSockJS();
     }
 
+
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
        config.enableSimpleBroker("/topic/","/queue");

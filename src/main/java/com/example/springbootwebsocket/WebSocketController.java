@@ -23,7 +23,6 @@ import java.util.Date;
 @RequiredArgsConstructor
 public class WebSocketController {
     private final SimpMessagingTemplate simpMessagingTemplate;
-
     @GetMapping
     public String indexPage() {
         return "index";
