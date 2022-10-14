@@ -33,21 +33,21 @@ Since websocket is just a communication protocol, it doesn’t know how to send 
 
 Configuring our websocket endpoint and message broker is fairly simple.
 
-    @Configuration
-    @EnableWebSocketMessageBroker
-    public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
-    
-        @Override
-        public void registerStompEndpoints(StompEndpointRegistry registry) {
-            registry.addEndpoint("/websocket").withSockJS();
-        }
-    
-        @Override
-        public void configureMessageBroker(MessageBrokerRegistry registry) {
-            registry.enableSimpleBroker("/topic");
-            registry.setApplicationDestinationPrefixes("/app");
-        }
+
+  @Configuration
+  @EnableWebSocketMessageBroker
+public class WebSocketConfigurer implements WebSocketMessageBrokerConfigurer {
+    @Override
+    public void registerStompEndpoints(StompEndpointRegistry registry) {
+       registry.addEndpoint("/chat").withSockJS();
     }
+    @Override
+    public void configureMessageBroker(MessageBrokerRegistry config) {
+       config.enableSimpleBroker("/topic/","/queue");
+       config.setApplicationDestinationPrefixes("/app");
+    }
+}
+    
 
 * @EnableWebSocketMessageBroker annotation is used to enable our WebSocket server.
 
