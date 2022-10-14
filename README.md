@@ -29,6 +29,36 @@ Since websocket is just a communication protocol, it doesn’t know how to send 
 
 ![structure](structure.png)
 
+## Configuring WebSocket
+
+Configuring our websocket endpoint and message broker is fairly simple.
+
+    @Configuration
+    @EnableWebSocketMessageBroker
+    public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
+    
+        @Override
+        public void registerStompEndpoints(StompEndpointRegistry registry) {
+            registry.addEndpoint("/websocket").withSockJS();
+        }
+    
+        @Override
+        public void configureMessageBroker(MessageBrokerRegistry registry) {
+            registry.enableSimpleBroker("/topic");
+            registry.setApplicationDestinationPrefixes("/app");
+        }
+    }
+
+* @EnableWebSocketMessageBroker annotation is used to enable our WebSocket server.
+
+* WebSocketMessageBrokerConfigurer interface is used to provide implementation for some of its methods to configure the websocket connection.
+
+* registerStompEndpoints method is used to register a websocket endpoint that the clients will use to connect to the server.
+
+* configureMessageBroker method is used to configure our message broker which will be used to route messages from one client to another.
+
+SockJS is also being used to enable fallback options for browsers that don’t support websocket.
+
 ## End result
 ![page1](page1.png)
 ![page2](page2.png)
