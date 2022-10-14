@@ -22,9 +22,15 @@ Since websocket is just a communication protocol, it doesn’t know how to send 
 * Dependencies : Websocket
 
 * Spring Boot version : 2.7.4
-* 
+
 ![setting](setting.png)
 
 ## Project structure
 
 ![structure](structure.png)
+
+## End result
+![page1](page1.png)
+![page2](page2.png)
+![page3](page3.png)
+
