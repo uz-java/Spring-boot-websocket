@@ -12,3 +12,19 @@ This is the main reasion which websocket is preferred over the HTTP protocol whe
 ## What is STOMP?
 >  Simple (or Streaming) Text Oriented Message Protocol (STOMP), formerly known as TTMP, is a simple text-based protocol, designed for working with message-oriented middleware (MOM). It provides an interoperable wire format that allows STOMP clients to talk with any message broker supporting the protocol.
 Since websocket is just a communication protocol, it doesn’t know how to send a message to a particular user. STOMP is basically a messaging protocol which is useful for these functionalities.
+
+## Setting up the application
+
+* Java version : 17
+
+* Type : Maven Project
+
+* Dependencies : Websocket
+
+* Spring Boot version : 2.7.4
+* 
+![setting](setting.png)
+
+## Project structure
+
+![structure](structure.png)
