@@ -3,6 +3,7 @@
 ## What is Websocket?
 >  WebSocket is a computer communications protocol, providing full-duplex communication channels over a single TCP connection.
 >  WebSocket is distinct from HTTP. The protocol enables interaction between a web browser (or other client application) and a web server with lower overhead than half-duplex alternatives such as HTTP polling, facilitating real-time data transfer from and to the server.
+
 ![](https://cdn-images-1.medium.com/max/2000/1*37WIDoN5qQ48dXRXN20inw.png)
 
 Once a websocket connection is established between a client and a server, both can exchange information until the connection is closed by any of the parties.
